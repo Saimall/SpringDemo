@@ -1,0 +1,30 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+
+    <bean id="dev" class="org.example.Dev">
+        <!-- Below is the example for setter injection besides fpr setter injection we will use property whereas for constructor injection we will use constructor-arg -->
+<!--        <property name="age" value="120"/>-->
+
+        <!-- constructor injection -->
+<!--        <constructor-arg value="1408"/>-->
+        
+        <!-- To inject the object of other bean using setter injection-->
+<!--        <property name="com" ref="lap1"/>-->
+
+        <!-- Injecting the object of other bean using constructor injection -->
+        <constructor-arg  ref="lap1"/>
+
+    </bean>
+
+
+
+    <bean id="lap1" class="org.example.Laptop">
+
+    </bean>
+</beans>
